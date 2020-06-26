@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ApiServiceService} from './api-service.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webapp';
+
+  constructor(
+    private apiService: ApiServiceService
+  ) {
+    this.apiService.getValues('aspnet').subscribe(v => console.log('sfsdf', v));
+  }
 }
