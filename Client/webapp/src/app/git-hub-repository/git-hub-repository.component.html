@@ -1,7 +1,7 @@
 <a [routerLink]="['/bookmarks']">
     link to bookmarks</a>
 <div class="margin-top" title="press enter to search">
-    <input #search placeholder="search " class="styled-input" (keyup.enter)="search(search.value)" />
+    <input #searchInput placeholder="search " class="styled-input" (keyup.enter)="search(searchInput.value)" />
 </div>
 <ul *ngIf="repositories ">
     <li *ngFor="let rep of repositories ">
