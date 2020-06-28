@@ -8,17 +8,17 @@ import { ApiServiceService, GitHubSearchResponse, GitHubSearchResponseItem } fro
 })
 export class GitHubRepositoryComponent implements OnInit {
 
-  public repository: GitHubSearchResponseItem[];
+  public repositories: GitHubSearchResponseItem[];
 
   constructor( private apiService: ApiServiceService) {}
 
   // search gitHub repository by clicking enter
-  onEnter(search: string) {
+  search(search: string) {
     if (!search) {
-      this.repository = [];
+      this.repositories = [];
     } else {
       this.apiService.getValues(search).subscribe(v => {
-        this.repository = v.items;
+        this.repositories = v.items;
       });
     }
   }

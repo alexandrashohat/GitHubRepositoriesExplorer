@@ -8,12 +8,12 @@ import { ApiServiceService, GitHubSearchResponseItem } from 'app/api-service.ser
 })
 export class GitHubRepositoryBookmarksComponent implements OnInit {
 
-  public repository: GitHubSearchResponseItem[];
+  public repositories: GitHubSearchResponseItem[];
 
   constructor(private apiService: ApiServiceService) {
     // gets all the saved bookmarks from the session
-    this.apiService.getBookmark().subscribe(rep =>
-      this.repository = rep);
+    this.apiService.getBookmarks().subscribe(rep =>
+      this.repositories = rep);
   }
 
   ngOnInit(): void {

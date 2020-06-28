@@ -7,6 +7,7 @@ export class WithCredentialsInterceptor  implements HttpInterceptor{
 
   constructor() {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // enable credentials
     return next.handle(req.clone({
       withCredentials: true
     }));

@@ -1,11 +1,11 @@
 <a [routerLink]="['/']">
     lets go back</a>
-<ul *ngIf="repository">
-    <li *ngFor="let rep of repository ">
+<ul *ngIf="repositories">
+    <li *ngFor="let rep of repositories ">
         <span>{{rep.name}}</span>
         <img [src]="rep.owner.avatar_url " />
     </li>
 </ul>
-<div *ngIf="!repository">
+<div *ngIf="!repositories">
     nothing saved yet :(
 </div>

@@ -1,10 +1,10 @@
 <a [routerLink]="['/bookmarks']">
     link to bookmarks</a>
 <div class="margin-top" title="press enter to search">
-    <input #search placeholder="search " class="styled-input" (keyup.enter)="onEnter(search.value)" />
+    <input #search placeholder="search " class="styled-input" (keyup.enter)="search(search.value)" />
 </div>
-<ul *ngIf="repository ">
-    <li *ngFor="let rep of repository ">
+<ul *ngIf="repositories ">
+    <li *ngFor="let rep of repositories ">
         <span>{{rep.full_name}}</span>
         <img [src]="rep.owner.avatar_url " />
         <button (click)="save(rep)">bookmark</button>

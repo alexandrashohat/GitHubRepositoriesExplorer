@@ -48,7 +48,7 @@ export class ApiServiceService {
     return this.http.post(`${this.api}/github/bookmarks`, item);
   }
 
-  public getBookmark(): Observable<GitHubSearchResponseItem[]> {
+  public getBookmarks(): Observable<GitHubSearchResponseItem[]> {
     return this.http.get<GitHubSearchResponseItem[]>(`${this.api}/github/bookmarks`);
   }
 }
