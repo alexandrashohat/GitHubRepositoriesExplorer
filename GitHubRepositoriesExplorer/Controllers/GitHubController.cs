@@ -53,9 +53,7 @@ namespace GitHubRepositoriesExplorer.Controllers
                 var bookmarks = SessionHelper.GetObjectFromJson<List<GitHubSearchResponseItem>>(HttpContext.Session, BOOKMARK_SESSION_KEY);
                 if (bookmarks == null)
                 {
-                    bookmarks = new List<GitHubSearchResponseItem>();
-                    HttpContext.Session.initSession();
-
+                    bookmarks = new List<GitHubSearchResponseItem>();                
                 }
                 else if (bookmarks.Any(v => v.id == item.id)) // assuming that the id is unique
                 {

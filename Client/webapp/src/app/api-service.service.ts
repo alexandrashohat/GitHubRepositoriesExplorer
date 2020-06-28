@@ -25,7 +25,7 @@ export class GitHubSearchResponseItem
 export class GitHubSearchResponseItemOwner
 {
   id: number;
-    avatar_url: string;
+   avatar_url: string;
    url:  string;
 }
 @Injectable({
@@ -37,17 +37,18 @@ export class ApiServiceService {
 
   constructor(
     private http: HttpClient,
-    ) {
- 
-  }
+    ) { }
+
   
   public getValues(name: string): Observable<GitHubSearchResponse> {
     return this.http.get<GitHubSearchResponse>(`${this.api}/github/search/${name}`);
   }
-  public setBookmark(item: any): Observable<any> {
+
+  public setBookmark(item: GitHubSearchResponseItem): Observable<any> {
     return this.http.post(`${this.api}/github/bookmarks`, item);
   }
-  public getBookmark(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.api}/github/bookmarks`);
+
+  public getBookmark(): Observable<GitHubSearchResponseItem[]> {
+    return this.http.get<GitHubSearchResponseItem[]>(`${this.api}/github/bookmarks`);
   }
 }

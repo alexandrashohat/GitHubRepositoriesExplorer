@@ -1,0 +1,24 @@
+li {
+    display: inline-block;
+    border: 1px solid hotpink;
+    min-width: 100px;
+    padding: 5px;
+    margin: 5px;
+    // background: linear-gradient(135deg, #7cf843, #42025c);
+    width: 320px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+
+input {
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.margin-top {
+    margin-top: 5px;
+}

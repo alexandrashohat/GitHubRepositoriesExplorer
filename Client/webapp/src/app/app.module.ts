@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiServiceService } from './api-service.service';
 import { GitHubRepositoryComponent } from './git-hub-repository/git-hub-repository.component';
@@ -20,7 +21,8 @@ import { GitHubRepositoryBookmarksComponent } from './git-hub-repository-bookmar
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
    {

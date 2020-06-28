@@ -27,25 +27,8 @@ namespace GitHubRepositoriesExplorer
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => false;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
-            //services.AddDistributedMemoryCache();
-            services.AddHttpClient<GitHubService>();
-
-            //services.AddSession(options =>
-            //{
-            //    options.Cookie.Name = ".GitHubRepositoriesExplorer.Session";
-            //    options.Cookie.HttpOnly = false;
-            //    options.IdleTimeout = TimeSpan.FromHours(24);
-            //    options.Cookie.IsEssential = true;
-            //});
-
+        {        
+            services.AddHttpClient<GitHubService>();            
             services
                 .AddSession()
                 .AddMvc()
@@ -69,8 +52,6 @@ namespace GitHubRepositoriesExplorer
             }
 
             app.UseSession();
-            //app.UseCookiePolicy();
-
             app.UseHttpsRedirection();
             app.UseMvc();
         }

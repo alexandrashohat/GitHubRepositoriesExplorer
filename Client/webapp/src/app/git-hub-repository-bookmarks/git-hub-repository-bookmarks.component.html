@@ -1,1 +1,11 @@
-<p>git-hub-repository-bookmarks works!</p>
+<a [routerLink]="['/']">
+    lets go back</a>
+<ul *ngIf="repository">
+    <li *ngFor="let rep of repository ">
+        <span>{{rep.name}}</span>
+        <img [src]="rep.owner.avatar_url " />
+    </li>
+</ul>
+<div *ngIf="!repository">
+    nothing saved yet :(
+</div>

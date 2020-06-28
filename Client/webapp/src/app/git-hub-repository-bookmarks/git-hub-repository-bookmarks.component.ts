@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService, GitHubSearchResponseItem } from 'app/api-service.service';
 
 @Component({
   selector: 'app-git-hub-repository-bookmarks',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitHubRepositoryBookmarksComponent implements OnInit {
 
-  constructor() { }
+  public repository: GitHubSearchResponseItem[];
+
+  constructor(private apiService: ApiServiceService) {
+    // gets all the saved bookmarks from the session
+    this.apiService.getBookmark().subscribe(rep =>
+      this.repository = rep);
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,13 @@
-<p>git-hub-repository works!</p>
 <a [routerLink]="['/bookmarks']">
-    link to bookmarks
-  </a>
+    link to bookmarks</a>
+<div class="margin-top" title="press enter to search">
+    <input #search placeholder="search " class="styled-input" (keyup.enter)="onEnter(search.value)" />
+</div>
+<ul *ngIf="repository ">
+    <li *ngFor="let rep of repository ">
+        <span>{{rep.full_name}}</span>
+        <img [src]="rep.owner.avatar_url " />
+        <button (click)="save(rep)">bookmark</button>
+    </li>
+
+</ul>

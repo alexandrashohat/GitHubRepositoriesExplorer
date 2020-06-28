@@ -21,7 +21,6 @@ namespace GitHubRepositoriesExplorer.Services
             client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
             // GitHub requires a user-agent
             client.DefaultRequestHeaders.Add("User-Agent", "GitHubRepositoryExplorer");
-
             Client = client;
         }
 
